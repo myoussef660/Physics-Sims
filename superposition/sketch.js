@@ -32,7 +32,7 @@ function draw() {
 
   calcPulse(yvalues1,-100,-3,75);
 
-  calcPulse(yvalues2,0,3,75);
+  calcPulse(yvalues2,0,3,50);
 
   sum = calcSum(yvalues1,yvalues2);
   renderWave(sum,color(0,0,0),2);
