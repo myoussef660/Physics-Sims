@@ -1,0 +1,63 @@
+var a=0.0;
+var l=0.0;
+var y;
+var theta=0.0;
+var int0 = 0.0;
+var x = 0.0 ;
+var slider;
+
+function setup() {
+createCanvas(800, 800);
+fill(255, 0, 0);
+
+LightWavelength = createElement('z2', 'Wavelength');
+LightWavelength.position(20, 30);
+slider1 = createSlider(0,1000,100);
+slider1.value(12);
+slider1.position(150, 30);
+
+SlitWidth = createElement('z2', 'Slit Width');
+SlitWidth.position(20,55);
+slider3 = createSlider();
+slider3.position(150, 55);
+slider3.value(50);
+
+CentralMaximum = createElement('z2', 'Central Maximum');
+CentralMaximum.position(20, 80);
+slider4 = createSlider(0,255,10);
+slider4.position(150, 80);
+slider4.value(140);
+ y = new Array(700);
+}
+
+function draw() {
+
+background(255);
+noFill();
+
+l = slider1.value();
+a = slider3.value();
+int0 = slider4.value();
+
+calcPlot();
+renderFunction();
+}
+
+function calcPlot(){
+    for (var x= 0 ; x< y.length; x+=1){
+          theta = map(x,0,y.length,-PI/2,PI/2)
+          y[x] = int0*Math.pow(Math.sin(PI*a*Math.sin(theta)/l)/(PI*a*Math.sin(theta)/l),2)
+          }
+}
+function renderFunction() {
+push();
+noFill();
+strokeWeight(4);
+stroke(0);
+beginShape();
+for (var j = 0; j< y.length; j++){
+  curveVertex(j,height/2-y[j])
+}
+endShape();
+pop();
+}
