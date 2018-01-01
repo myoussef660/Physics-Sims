@@ -33,7 +33,7 @@ function setup() {
 
 function draw() {
   background(255);
-  s =  slider.value();
+  s =  slider.value(5);
   t = millis()/1000;
   //var leftwall =800;
   //var rightwall = 0;
