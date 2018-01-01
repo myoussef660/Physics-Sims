@@ -27,7 +27,7 @@ function setup() {
   wavespeed.position(20,80);
   slider = createSlider(1,12,1);
   slider.position(140, 80);
-  slider.value(1);
+  slider.value(3);
 
 }
 
