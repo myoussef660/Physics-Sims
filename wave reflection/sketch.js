@@ -44,7 +44,7 @@ function calcPulse(yvalues_,offset_,omega_,amplitude_) {
     //yvalues_[i] = amplitude_* (-Math.pow((k * (x+offset_) - omega_ * t),2));
     x+=dx
 }
-if ( Math.E > width){
+if ( x > width){
 offset = !offset_;
 }
 }
