@@ -51,8 +51,8 @@ function draw() {
   pop();
   fill(100, 100, 240);
   rect(490, 150, 10, 200);
-  fill(250, 250, 250);
-  ellipse(495, 250, 20, 15);
+  //fill(250, 250, 250);
+  //ellipse(495, 250, 20, 15);
 }
 
 function calcPulse(yvalues_,offset_,omega_,amplitude_) {
