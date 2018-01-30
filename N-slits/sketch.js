@@ -53,7 +53,7 @@ renderFunction();
 
 function calcPlot(){
   for (var x= 0 ; x< y.length; x+=1){
-    theta = map(x,0,y.length,-PI/2,PI/2)
+    theta = map(x,0,y.length,-.1,.1)
     y[x] = int0*Math.pow(Math.sin(N*PI*d*Math.sin(theta)/l),2)/(Math.pow(Math.sin(PI*d*Math.sin(theta)/l),2))
 }
 }

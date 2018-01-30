@@ -9,6 +9,9 @@ var k = 2*Math.PI/wavelength;
 var omega_ = 0;
 var yvaluesSum = [];
 var offset_ = 0;
+var t =0;
+var running = false;
+
 
 function setup() {
   /*radio = createRadio();
@@ -18,7 +21,7 @@ function setup() {
     hard = radio.option('Hard Reflection');
     radio.position(120,5);
 */
-  frameRate(100);
+  frameRate(30);
   canvas = createCanvas(500, 500);
   canvas.parent('sketch-holder');
   w = width+12;
@@ -27,23 +30,29 @@ function setup() {
 
   yvalues1 = new Array(floor(w/xspacing));
   yvalues2 = new Array(floor(w/xspacing));
-  yvalues1plus2 = new Array(floor(w/xspacing));
-  yvalues3 = new Array(floor(w/xspacing));
-  yvalues2plus3 = new Array(floor(w/xspacing));
+
+  button = createButton('click me');
+button.position(19, 19);
+button.mousePressed(makeWaves);
+onoff = createButton("start");
+onoff.mouseClicked(turnonoff);
+onoff.position(50,300);
+onoff.class("sim-button gray");
+  noLoop();
 }
 
 function draw() {
   background(255);
-  t = millis()/1000;
+  //t = millis()/1000;
 
 
-  calcPulse(yvalues1,-35,-4,50);
-  calcPulse(yvalues2,0,4,50);
+  calcPulse(yvalues1,-31,-2,50);
+  calcPulse(yvalues2,0,2,50);
   //calcPulse(yvalues3,-42,-4,50)
-  renderWave(yvalues1,color(0,0,0),0);
-  renderWave(yvalues2,color(0,0,0),0);
+  //renderWave(yvalues1,color(0,0,0),0);
+  //renderWave(yvalues2,color(0,0,0),0);
   //renderWave(yvalues3,color(0,0,0),0);
-  sum = calcSum(yvalues1,yvalues2,yvalues3);
+  sum = calcSum(yvalues1,yvalues2);
   renderWave(sum,color(0,0,0),2);
   push();
   strokeWeight(1);
@@ -53,8 +62,11 @@ function draw() {
   rect(490, 150, 10, 200);
   //fill(250, 250, 250);
   //ellipse(495, 250, 20, 15);
+  t=t+0.05;
 }
-
+function makeWaves() {
+t = 0
+}
 function calcPulse(yvalues_,offset_,omega_,amplitude_) {
 
   x = 0;
@@ -63,7 +75,7 @@ function calcPulse(yvalues_,offset_,omega_,amplitude_) {
     x+=dx;
   }
 }
-function calcSum(yvalues1_,yvalues2_,yvalues3_) {
+function calcSum(yvalues1_,yvalues2_) {
   x = 0;
 for (var i = 0; i < yvalues1_.length; i++) {
   yvaluesSum[i] = yvalues1_[i]+yvalues2_[i];
@@ -72,8 +84,6 @@ return yvaluesSum;
 }
 
 function renderWave(yvalues_,color_,weight_) {
-
-
   noFill();
   stroke(color_);
   strokeWeight(weight_)
@@ -82,4 +92,20 @@ function renderWave(yvalues_,color_,weight_) {
     curveVertex(x*xspacing, height/2-yvalues_[x]);
   }
   endShape();
+}
+
+function turnonoff() {
+  if (running) {
+    running = false;
+    noLoop();
+    onoff.html("start");
+    return
+  }
+
+  if (!running){
+    running = true;
+    loop();
+    onoff.html("stop");
+    return
+  }
 }
