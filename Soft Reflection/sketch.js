@@ -4,7 +4,6 @@ var amplitude_ = 75.0; // Height of wave
 var wavelength = 20;   // How many pixels before the wave repeats
 var dx;               // Value for incrementing x
 var yvalues_;  // Using an array to store height values for the wave
-//var k = 1;
 var k = 2*Math.PI/wavelength;
 var omega_ = 0;
 var yvaluesSum = [];
@@ -14,13 +13,7 @@ var running = false;
 
 
 function setup() {
-  /*radio = createRadio();
-    soft = radio.option('Soft Reflection');
-    radio.position(100,5);
-  //radio2 = createRadio();
-    hard = radio.option('Hard Reflection');
-    radio.position(120,5);
-*/
+
   frameRate(30);
   canvas = createCanvas(500, 500);
   canvas.parent('sketch-holder');
@@ -43,15 +36,12 @@ onoff.class("sim-button gray");
 
 function draw() {
   background(255);
-  //t = millis()/1000;
+
 
 
   calcPulse(yvalues1,-31,-2,50);
   calcPulse(yvalues2,0,2,50);
-  //calcPulse(yvalues3,-42,-4,50)
-  //renderWave(yvalues1,color(0,0,0),0);
-  //renderWave(yvalues2,color(0,0,0),0);
-  //renderWave(yvalues3,color(0,0,0),0);
+
   sum = calcSum(yvalues1,yvalues2);
   renderWave(sum,color(0,0,0),2);
   push();
@@ -60,8 +50,7 @@ function draw() {
   pop();
   fill(100, 100, 240);
   rect(490, 150, 10, 200);
-  //fill(250, 250, 250);
-  //ellipse(495, 250, 20, 15);
+
   t=t+0.05;
 }
 function makeWaves() {
