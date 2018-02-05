@@ -14,7 +14,7 @@ noFill();
 LightWavelength = createElement('z2', 'Wavelength');
 LightWavelength.position(20, 30);
 slider1 = createSlider(400,700,10);
-slider1.value(500);
+slider1.value(600);
 slider1.position(200, 30);
 
 DistanceBTNSlits = createElement('z2', 'Distance between slits');
@@ -33,7 +33,7 @@ NSlits = createElement('z2','N-slits');
 NSlits.position(20,105);
 slider5 = createSlider(2,10,1);
 slider5.position(200,105);
-slider5.value(50);
+slider5.value(8);
 
  y = new Array(700);
 }
@@ -54,7 +54,7 @@ renderFunction();
 function calcPlot(){
   for (var x= 0 ; x< y.length; x+=1){
     theta = map(x,0,y.length,-.1,.1)
-    y[x] = int0*Math.pow(Math.sin(N*PI*d*Math.sin(theta)/l),2)/(Math.pow(Math.sin(PI*d*Math.sin(theta)/l),2))
+    y[x] = int0*Math.pow(Math.sin(N*Math.PI*d*Math.sin(theta)/l),2)/(Math.pow(Math.sin(Math.PI*d*Math.sin(theta)/l),2))
     //constrain(y[x],0,200);
 }
 //constrain(y[x],0,200);

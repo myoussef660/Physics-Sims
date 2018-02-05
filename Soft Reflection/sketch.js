@@ -36,12 +36,8 @@ onoff.class("sim-button gray");
 
 function draw() {
   background(255);
-
-
-
   calcPulse(yvalues1,-31,-2,50);
   calcPulse(yvalues2,0,2,50);
-
   sum = calcSum(yvalues1,yvalues2);
   renderWave(sum,color(0,0,0),2);
   push();
@@ -50,7 +46,6 @@ function draw() {
   pop();
   fill(100, 100, 240);
   rect(490, 150, 10, 200);
-
   t=t+0.05;
 }
 function makeWaves() {
