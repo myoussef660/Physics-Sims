@@ -19,7 +19,7 @@ slider1.position(200, 30);
 
 DistanceBTNSlits = createElement('z2', 'Distance between slits');
 DistanceBTNSlits.position(20,55);
-slider2 = createSlider(10000,10100,100);
+slider2 = createSlider(10000,10500,10);
 slider2.position(200,55 );
 slider2.value(1500);
 

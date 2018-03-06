@@ -18,7 +18,7 @@ slider1.position(150, 30);
 
 SlitWidth = createElement('z2', 'Slit Width');
 SlitWidth.position(20,55);
-slider3 = createSlider(1,3000,10);
+slider3 = createSlider(1,10000,10);
 slider3.position(150, 55);
 slider3.value(2000);
 
