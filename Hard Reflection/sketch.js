@@ -24,12 +24,12 @@ function setup() {
   yvalues1 = new Array(floor(w/xspacing));
   yvalues2 = new Array(floor(w/xspacing));
 
-  button = createButton('click me');
+  button = createButton('Reset');
 button.position(19, 19);
 button.mousePressed(makeWaves);
 onoff = createButton("start");
 onoff.mouseClicked(turnonoff);
-onoff.position(50,300);
+onoff.position(100,19);
 onoff.class("sim-button gray");
   noLoop();
 }
