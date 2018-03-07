@@ -27,9 +27,10 @@ function setup() {
   button = createButton('Reset');
 button.position(19, 19);
 button.mousePressed(makeWaves);
+button.class("sim-button gray");
 onoff = createButton("start");
 onoff.mouseClicked(turnonoff);
-onoff.position(100,19);
+onoff.position(150,19);
 onoff.class("sim-button gray");
   noLoop();
 }
@@ -50,8 +51,6 @@ function draw() {
   pop();
   fill(100, 100, 240);
   rect(490, 150, 10, 200);
-  fill(250, 250, 250);
-  ellipse(495, 250, 20, 15);
   t=t+0.05;
 }
 function makeWaves() {
