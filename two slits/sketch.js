@@ -58,7 +58,7 @@ renderFunction();
 
 function calcPlot(){
   for (var x= 0 ; x< y.length; x+=1){
-      theta = map(x,0,y.length,-.6,.55555555555555)
+      theta = map(x,0,y.length,-.6,.55555555555)
       if(diffraction.checked()==true){
       y[x] = int0 * Math.pow(Math.cos(PI*d*Math.sin(theta)/l),2)*Math.pow(Math.sin(PI*a*Math.sin(theta)/l)/(PI*a*Math.sin(theta)/l),2)
       }
