@@ -24,12 +24,13 @@ function setup() {
   yvalues1 = new Array(floor(w/xspacing));
   yvalues2 = new Array(floor(w/xspacing));
 
-  button = createButton('click me');
+  button = createButton('Reset');
 button.position(19, 19);
 button.mousePressed(makeWaves);
+button.class("sim-button gray");
 onoff = createButton("start");
 onoff.mouseClicked(turnonoff);
-onoff.position(50,300);
+onoff.position(150,19);
 onoff.class("sim-button gray");
   noLoop();
 }
@@ -46,6 +47,8 @@ function draw() {
   pop();
   fill(100, 100, 240);
   rect(490, 150, 10, 200);
+  fill(0)
+  ellipse(495,250-yvaluesSum[100],20,20)
   t=t+0.05;
 }
 function makeWaves() {

@@ -15,25 +15,29 @@ LightWavelength = createElement('z2', 'Wavelength');
 LightWavelength.position(20, 30);
 slider1 = createSlider(400,700,10);
 slider1.value(600);
-slider1.position(200, 30);
+slider1.position(200, 20);
+slider1.class("sim-slider gray");
 
 DistanceBTNSlits = createElement('z2', 'Distance between slits');
-DistanceBTNSlits.position(20,55);
-slider2 = createSlider(10000,10500,10);
-slider2.position(200,55 );
+DistanceBTNSlits.position(20,80);
+slider2 = createSlider(10000,20000,100);
+slider2.position(200,70 );
 slider2.value(1500);
+slider2.class("sim-slider gray");
 
 CentralMaximum = createElement('z2', 'Central Maximum');
-CentralMaximum.position(20, 80);
-slider4 = createSlider(0,10,5);
-slider4.position(200, 80);
-slider4.value(3);
+CentralMaximum.position(20, 130);
+slider4 = createSlider(0,5,1);
+slider4.position(200, 120);
+slider4.value(25);
+slider4.class("sim-slider gray");
 
 NSlits = createElement('z2','N-slits');
-NSlits.position(20,105);
-slider5 = createSlider(2,10,1);
-slider5.position(200,105);
+NSlits.position(20,180);
+slider5 = createSlider(2,20,5);
+slider5.position(200,170);
 slider5.value(8);
+slider5.class("sim-slider gray");
 
  y = new Array(700);
 }
@@ -53,7 +57,7 @@ renderFunction();
 
 function calcPlot(){
   for (var x= 0 ; x< y.length; x+=1){
-    theta = map(x,0,y.length,-.1,.1)
+    theta = map(x,0,y.length,.0001,.1)
     y[x] = int0*Math.pow(Math.sin(N*Math.PI*d*Math.sin(theta)/l),2)/(Math.pow(Math.sin(Math.PI*d*Math.sin(theta)/l),2))
     //constrain(y[x],0,200);
 }
