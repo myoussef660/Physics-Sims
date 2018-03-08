@@ -20,7 +20,7 @@ slider1.position(150, 30);
 
 DistanceBTNSlits = createElement('z2', 'Distance between slits');
 DistanceBTNSlits.position(20,55);
-slider2 = createSlider(10000,50000,100);
+slider2 = createSlider(2800,50000,100);
 slider2.position(200,55 );
 slider2.value(1000);
 
@@ -58,7 +58,7 @@ renderFunction();
 
 function calcPlot(){
   for (var x= 0 ; x< y.length; x+=1){
-      theta = map(x,0,y.length,-.1,.1)
+      theta = map(x,0,y.length,-.6,.55555555555555)
       if(diffraction.checked()==true){
       y[x] = int0 * Math.pow(Math.cos(PI*d*Math.sin(theta)/l),2)*Math.pow(Math.sin(PI*a*Math.sin(theta)/l)/(PI*a*Math.sin(theta)/l),2)
       }
