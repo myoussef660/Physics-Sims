@@ -22,21 +22,21 @@ DistanceBTNSlits = createElement('z2', 'Distance between slits');
 DistanceBTNSlits.position(20,80);
 slider2 = createSlider(525,20000,100);
 slider2.position(200,70 );
-slider2.value(1500);
+slider2.value(10000);
 slider2.class("sim-slider gray");
 
 CentralMaximum = createElement('z2', 'Central Maximum');
 CentralMaximum.position(20, 130);
 slider4 = createSlider(0,5,.2);
 slider4.position(200, 120);
-slider4.value(1);
+slider4.value(2);
 slider4.class("sim-slider gray");
 
 NSlits = createElement('z2','N-slits');
 NSlits.position(20,180);
 slider5 = createSlider(2,15,5);
 slider5.position(200,170);
-slider5.value(8);
+slider5.value(10);
 slider5.class("sim-slider gray");
 
  y = new Array(700);
