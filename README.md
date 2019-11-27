@@ -1,6 +1,10 @@
 # Physics-Sims
 
-## This work has been completed under the supervision of Dr. James Hedberg, Deputy Chair of Physics Department at the City College of New York. This Work is published on Dr. Hedberg's scientific sims webpage https://sciencesims.com/sims-catalog/ . The following are the links for the individual simulations:
+## This work has been completed under the supervision of Dr. James Hedberg, Deputy Chair of Physics Department at the City College of New York.
+
+## This Work is published on Dr. Hedberg's scientific sims webpage https://sciencesims.com/sims-catalog/ . 
+
+## The following are the links and Demos for the individual simulations:
   * Single-Slit -> https://sciencesims.com/sims/single-slit/
   * Double-Slit -> https://sciencesims.com/sims/double-slit/
   * Diffraction -> https://sciencesims.com/sims/N-slits/
